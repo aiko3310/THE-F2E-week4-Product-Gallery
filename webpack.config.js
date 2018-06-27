@@ -20,12 +20,13 @@ module.exports = {
         ]
       },
       {
-        test: /\.sass$/,
+        test: /\.scss$/,
         use: [
             MiniCssExtractPlugin.loader,
             // "style-loader", // style nodes from js strings
             "css-loader",
-            "sass-loader"
+            "sass-loader",
+            "postcss-loader"
         ]
       }
     ]
