@@ -28,6 +28,18 @@ module.exports = {
             "sass-loader",
             "postcss-loader"
         ]
+      },{
+        test: /\.(png|jpg|svg)$/,
+        use:[
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options:{
+              bypassOnDebug: true,
+            },
+          }
+        ]
+
       }
     ]
   },

@@ -3,9 +3,77 @@ $font-stack:    Helvetica, sans-serif;
 body{
   font: 100% $font-stack;
   margin: 0;
+  padding: 20px;
 }
 main{
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(8, 120px);
+  grid-template-rows: repeat(20, 100px);
+}
+.title{
+  grid-column: 3 / span 4;
+  grid-row: 1 /span 1;
+  text-align: center;
+  p{
+    background-color: black;
+    color: white;
+    padding: 2px;
+    width: 21%;
+    margin: 0 auto;
+  }
+  h1{
+    font-size: 72px;
+    margin: 0;
+  }
+}
+.hat-man{
+  background-image: url('../img/hat-man.jpg');
+  grid-column: 1 / span 4;
+  grid-row: 3 /span 4;
+  background-size: cover;
+  background-position: center;
+}
+.linen{
+  grid-column: 1 / span 3;
+  grid-row: 2 /span 2;
+  font-size: 48px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: bolder;
+  position: relative;
+  margin-bottom: 17px;
+  p{
+    margin: 0px 0 35px;
+    height: 26px;
+    overflow: hidden;
+    opacity: 0.3;
+  }
+  &::before{
+    content: "LINEN BLAZER";
+    position: absolute;
+    top: 50px;
+    height: 19px;
+    overflow: hidden;
+    opacity: 0.1;
+  }
+  &:after{
+    content: "LINEN BLAZER";
+    position: absolute;
+    top:80px;
+  }
+}
+.hollow-box{
+  height: 200px;
+  width: 240px;
+  box-sizing: border-box;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 20px solid #50E3C2;
 }
