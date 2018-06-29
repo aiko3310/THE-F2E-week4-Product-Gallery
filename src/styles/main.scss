@@ -1,5 +1,6 @@
-$font-stack:    Helvetica, sans-serif;
-
+$font-stack:    'Roboto', sans-serif;
+$box-color: #50E3C2;
+$slash:-webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, $box-color), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, $box-color),color-stop(.75, $box-color), color-stop(.75, transparent),to(transparent));
 body{
   font: 100% $font-stack;
   margin: 0;
@@ -8,6 +9,11 @@ body{
 main{
   max-width: 960px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(8, 120px);
+  grid-template-rows: repeat(20, 100px);
+}
+.grid-template{
   display: grid;
   grid-template-columns: repeat(8, 120px);
   grid-template-rows: repeat(20, 100px);
@@ -28,52 +34,546 @@ main{
     margin: 0;
   }
 }
-.hat-man{
-  background-image: url('../img/hat-man.jpg');
-  grid-column: 1 / span 4;
-  grid-row: 3 /span 4;
-  background-size: cover;
-  background-position: center;
+.first{
+  z-index: 0;
+  grid-column: 1 /  1;
+  grid-row: 1 / 1;
+  & > div:first-of-type{
+    background-image: url('../img/hat-man.jpg');
+    grid-column: 1 / span 4;
+    grid-row: 3 /span 4;
+    background-size: cover;
+    background-position: center;
+  }
+  & > div:nth-of-type(2){
+    grid-column: 1 / span 3;
+    grid-row: 2 /span 2;
+    font-size: 48px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bolder;
+    position: relative;
+    margin-bottom: 17px;
+    p{
+      margin: 0 0 26px;
+      height: 22px;
+      overflow: hidden;
+      opacity: 0.3;
+    }
+    &::before{
+      content: "LINEN BLAZER";
+      position: absolute;
+      top: 60px;
+      height: 19px;
+      overflow: hidden;
+      opacity: 0.1;
+    }
+    &:after{
+      content: "LINEN BLAZER";
+      position: absolute;
+      top:80px;
+    }
+  }
+  & > div:nth-of-type(3){
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 20px solid $box-color;
+    grid-column: 3 / span 3;
+    grid-row: 2 /span 3;
+    margin: 50px 60px;
+    z-index: -1;
+  }
+  & > div:last-of-type{
+    background-color: transparent;
+    background-image: $slash;
+    background-size: 60px 60px;
+    grid-column: 1 / span 3;
+    grid-row: 6 /span 2;
+    margin: 45px 58px;
+  }
+  & > p:first-of-type{
+    font-size: 48px;
+    font-weight: bolder;
+    grid-column: 1 / 1;
+    grid-row: 7 / 7;
+    margin: 0;
+  }
+  & > p:nth-of-type(2){
+    font-size: 24px;
+    white-space: nowrap;
+    font-style: italic;
+    font-weight: bold;
+    margin: 26px 52px 0px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    grid-column: 4 / span 3;
+    grid-row: 6 / span 1;
+    transform: rotate(90deg);
+  }
 }
-.linen{
-  grid-column: 1 / span 3;
-  grid-row: 2 /span 2;
-  font-size: 48px;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-weight: bolder;
-  position: relative;
-  margin-bottom: 17px;
-  p{
-    margin: 0px 0 35px;
-    height: 26px;
-    overflow: hidden;
-    opacity: 0.3;
+
+.second{
+  z-index: 2;
+  grid-column: 1 /  1;
+  grid-row: 1 / 1;
+  
+  & > div:first-of-type{
+    background-image: url('../img/glass-man2.jpg');
+    grid-column: 6 / span 2;
+    grid-row: 4 /span 2;
+    background-size: cover;
+    background-position: center;
   }
-  &::before{
-    content: "LINEN BLAZER";
-    position: absolute;
-    top: 50px;
-    height: 19px;
-    overflow: hidden;
-    opacity: 0.1;
+  & > div:nth-of-type(2){
+    grid-column: 6 / span 3;
+    grid-row: 3 /span 3;
+    background-color: $box-color;
+    margin: 50px 60px;
+    z-index: -1;
   }
-  &:after{
-    content: "LINEN BLAZER";
-    position: absolute;
-    top:80px;
+  & > div:nth-of-type(3){
+    grid-column: 7 / span 2;
+    grid-row: 3 /span 2;
+    border: 20px solid $box-color;
+    box-sizing: border-box;
+    z-index: -2;
+  }
+  & > p:first-of-type{
+    grid-column: 5 / span 2;
+    grid-row: 3 / span 1;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0 1px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  & > div:last-of-type{
+    grid-column: 7 / span 2;
+    grid-row: 6 /span 1;
+    font-size: 48px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-weight: bolder;
+    position: relative;
+    p{
+      margin: 0 0 68px;
+      height: 26px;
+      overflow: hidden;
+      opacity: 0.5;
+    }
+    &::before{
+      content: "FREELIFT";
+      position: absolute;
+      top: -6px;
+      height: 21px;
+      overflow: hidden;
+      opacity: 0.3;
+    }
+    &:after{
+      content: "FREELIFT";
+      position: absolute;
+      top:23px;
+    }
   }
 }
-.hollow-box{
-  height: 200px;
-  width: 240px;
-  box-sizing: border-box;
-  background-color: transparent;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 20px solid #50E3C2;
+
+.third{
+  z-index: 2;
+  grid-column: 1 /  1;
+  grid-row: 1 / 1;
+  & > div:first-of-type{
+    background-image: url('../img/black-glass-man.jpg');
+    grid-column: 1 / span 4;
+    grid-row: 9 /span 2;
+    background-size: cover;
+    background-position: center;
+  }
+  & > div:nth-of-type(2){
+    background-color: $box-color;
+    grid-column: 1 / span 2;
+    grid-row: 8 /span 2;
+    z-index: -1;
+    margin-top: 50px;
+  }
+  & > div:nth-of-type(3){
+    grid-column: 2 / span 3;
+    grid-row: 8 /span 1;
+    font-size: 48px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    font-weight: bolder;
+    position: relative;
+    p{
+      margin: 0 0 41px;
+      height: 29px;
+      overflow: hidden;
+      opacity: 0.5;
+    }
+    &::before{
+      content: "SUPER SKINNY";
+      position: absolute;
+      top: 20px;
+      height: 21px;
+      overflow: hidden;
+      opacity: 0.2;
+    }
+    &:after{
+      content: "SUPER SKINNY";
+      position: absolute;
+      top:49px;
+    }
+  }
+  & > div:last-of-type{
+    grid-column: 3 / span 3;
+    grid-row: 9 /span 3;
+    border: 20px solid $box-color;
+    box-sizing: border-box;
+    margin: 50px 60px;
+    z-index: -1;
+  }
+  & > p:first-of-type{
+    grid-column: 5 / span 1;
+    grid-row: 11 /span 1;
+    font-size: 48px;
+    font-weight: bolder;
+    margin: 0 0 0 3px;
+    line-height: 48px;
+  }
+  & > p:last-of-type{
+    grid-column: 1 / span 2;
+    grid-row: 11 / span 1;
+    margin: 0 0 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+  }
+}
+
+.fourth{
+  z-index: 3;
+  grid-column: 1 /  1;
+  grid-row: 1 / 1;
+  
+  & > div:first-of-type{
+    background-image: url('../img/yoman.jpg');
+    grid-column: 7 / span 2;
+    grid-row: 9 /span 4;
+    background-size: cover;
+    background-position: center;
+  }
+  & > div:nth-of-type(2){
+    grid-column: 7 / span 2;
+    grid-row: 12 /span 2;
+    margin: 50px 0;
+    background-color: transparent;
+    background-image: $slash;
+    background-size: 50px 50px;
+  }
+  & > div:nth-of-type(3){
+    grid-column: 6 / span 3;
+    grid-row: 8 /span 2;
+    border: 20px solid $box-color;
+    box-sizing: border-box;
+    margin: 0 60px;
+    z-index: -1;
+  }
+  & > div:last-of-type{
+    grid-column: 5 / span 3;
+    grid-row: 9 /span 1;
+    font-size: 48px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bolder;
+    position: relative;
+    transform: rotate(270deg);
+    p{
+      margin: 0 0 31px;
+      height: 29px;
+      overflow: hidden;
+      opacity: 0.4;
+    }
+    &:before{
+      content: "DENIM";
+      position: absolute;
+      top: 32px;
+      height: 18px;
+      overflow: hidden;
+      opacity: 0.2;
+    }
+    &:after{
+      content: "DENIM";
+      position: absolute;
+      top:56px;
+    }
+  }
+  & > p:first-of-type{
+    font-size: 24px;
+    white-space: nowrap;
+    font-style: italic;
+    font-weight: bold;
+    margin: -83px 57px 0px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-column: 7 / span 2;
+    grid-row: 7 / span 1;
+    transform: rotate(90deg);
+    transform-origin: bottom;
+  }
+  & > p:last-of-type{
+    grid-column: 6 / span 1;
+    grid-row: 12 / span 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+.fifth{
+  z-index: 4;
+  grid-column: 1 /  1;
+  grid-row: 1 / 1;
+
+  & > div:first-of-type{
+    background-image: url('../img/big-boy.jpg');
+    grid-column: 3 / span 2;
+    grid-row: 13 /span 2;
+    background-size: cover;
+    background-position: center;
+    transform: scaleX(-1);
+  }
+  & > div:nth-of-type(2){
+    background-color: transparent;
+    background-image: $slash;
+    background-size: 60px 60px;
+    grid-column: 1 / span 3;
+    grid-row: 12 /span 2;
+    margin: 45px 58px;
+    z-index: 1;
+  }
+  & > div:nth-of-type(3){
+    grid-column: 2 / span 2;
+    grid-row: 14 /span 2;
+    border: 20px solid #50E3C2;
+    box-sizing: border-box;
+    margin: 50px 0;
+    z-index: -1;
+  }
+  & > div:last-of-type{
+    grid-column: 1 / span 3;
+    grid-row: 13 /span 1;
+    font-size: 48px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    position: relative;
+    z-index: 2;
+    p{
+      margin: 33px 0 0px;
+      height: 29px;
+      overflow: hidden;
+      opacity: 0.4;
+    }
+    &:before{
+      content: "SWEATSHIRTS";
+      position: absolute;
+      top: 24px;
+      height: 18px;
+      overflow: hidden;
+      opacity: 0.2;
+    }
+    &:after{
+      content: "SWEATSHIRTS";
+      position: absolute;
+      top: 46px;
+    }
+  }
+  & > p:first-of-type{
+    grid-column: 5 / span 2;
+    grid-row: 13 / span 1;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  & > p:last-of-type{
+    grid-column: 2 / span 1;
+    grid-row: 14 /span 1;
+    font-size: 48px;
+    font-weight: bolder;
+    margin: auto 0 0 0;
+    line-height: 48px;
+  }
+}
+.sixth{
+  z-index: 5;
+  grid-column: 1 /  1;
+  grid-row: 1 / 1;
+
+  & > div:first-of-type{
+    background-image: url('../img/glass-man.jpg');
+    grid-column: 5 / span 4;
+    grid-row: 15 /span 4;
+    background-size: cover;
+    background-position: center;
+  }
+  & > div:nth-of-type(2){
+    grid-column: 5 / span 4;
+    grid-row: 18 /span 2;
+    border: 20px solid #50E3C2;
+    box-sizing: border-box;
+    margin: 50px 0;
+    z-index: -1;
+  }
+  & > div:nth-of-type(3){
+    background-color: #50E3C2;
+    grid-column: 4 / span 2;
+    grid-row: 17 /span 2;
+    z-index: -1;
+    margin-left: 50px;
+  }
+  & > div:last-of-type{
+    grid-column: 6 / span 3;
+    grid-row: 14 /span 1;
+    font-size: 48px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    position: relative;
+    z-index: 2;
+    p{
+      margin: 31px 0 0px;
+      height: 25px;
+      overflow: hidden;
+      opacity: 0.4;
+    }
+    &:before{
+      content: "VINTAGE DENIM";
+      position: absolute;
+      top: 24px;
+      height: 18px;
+      overflow: hidden;
+      opacity: 0.2;
+    }
+    &:after{
+      content: "VINTAGE DENIM";
+      position: absolute;
+      top: 46px;
+    }
+  }
+  & > p:first-of-type{
+    grid-column: 6 / span 2;
+    grid-row: 19 / span 1;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  & > p:last-of-type{
+    grid-column: 4 / span 1;
+    grid-row: 16 /span 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 48px;
+    font-weight: bolder;
+    margin: 0 0 0 0;
+    line-height: 48px;
+  }
+}
+.seventh{
+  z-index: 6;
+  grid-column: 1 /  1;
+  grid-row: 1 / 1;
+
+  & > div:first-of-type{
+    background-image: url('../img/side-man.jpg');
+    grid-column: 1 / span 2;
+    grid-row: 17 /span 4;
+    background-size: cover;
+    background-position: center;
+  }
+  & > div:nth-of-type(2){
+    background-color: #50E3C2;
+    grid-column: 3;
+    grid-row: 19 /span 2;
+  }
+  & > div:nth-of-type(3){
+    grid-column: 1 / span 3;
+    grid-row: 16 /span 4;
+    border: 20px solid #50E3C2;
+    box-sizing: border-box;
+    margin: 50px 60px;
+    z-index: -1;
+  }
+  & > div:last-of-type{
+    grid-column: 3 / span 2;
+    grid-row: 18 /span 1;
+    font-size: 48px;
+    margin: 0 40px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bolder;
+    position: relative;
+    z-index: 2;
+    transform: rotate(90deg);
+    transform-origin: top center;
+    p{
+      margin: 0 0 12px;
+      height: 25px;
+      overflow: hidden;
+      opacity: 0.4;
+    }
+    &:before{
+      content: "EDITION";
+      position: absolute;
+      top: 24px;
+      height: 18px;
+      overflow: hidden;
+      opacity: 0.2;
+    }
+    &:after{
+      content: "EDITION";
+      position: absolute;
+      top: 46px;
+    }
+  }
+  & > p:first-of-type{
+    grid-column: 1 / span 2;
+    grid-row: 16 / span 1;
+    margin: auto 0 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  & > p:last-of-type{
+    grid-column: 3 / span 1;
+    grid-row: 20 /span 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 48px;
+    font-weight: bolder;
+    margin: 0 0 0 0;
+    line-height: 48px;
+  }
 }
