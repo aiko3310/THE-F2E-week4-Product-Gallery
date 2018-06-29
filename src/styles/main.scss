@@ -44,6 +44,10 @@ main{
     grid-row: 3 /span 4;
     background-size: cover;
     background-position: center;
+    &:hover{
+      background-image: url('../img/ting.jpg');
+      background-position: top;
+    }
   }
   & > div:nth-of-type(2){
     grid-column: 1 / span 3;
@@ -126,6 +130,10 @@ main{
     grid-row: 4 /span 2;
     background-size: cover;
     background-position: center;
+    &:hover{
+      background-image: url('../img/ting2.jpg');
+      background-position: top;
+    }
   }
   & > div:nth-of-type(2){
     grid-column: 6 / span 3;
@@ -194,6 +202,10 @@ main{
     grid-row: 9 /span 2;
     background-size: cover;
     background-position: center;
+    &:hover{
+      background-image: url('../img/ting3.jpg');
+      background-position: top;
+    }
   }
   & > div:nth-of-type(2){
     background-color: $box-color;
@@ -270,6 +282,10 @@ main{
     grid-row: 9 /span 4;
     background-size: cover;
     background-position: center;
+    &:hover{
+      background-image: url('../img/ting5.jpg');
+      background-position: center;
+    }
   }
   & > div:nth-of-type(2){
     grid-column: 7 / span 2;
@@ -356,6 +372,11 @@ main{
     background-size: cover;
     background-position: center;
     transform: scaleX(-1);
+    &:hover{
+      background-image: url('../img/ting6.png');
+      transform: scaleX(1);
+      background-position: top;
+    }
   }
   & > div:nth-of-type(2){
     background-color: transparent;
@@ -432,6 +453,9 @@ main{
     grid-row: 15 /span 4;
     background-size: cover;
     background-position: center;
+    &:hover{
+      background-image: url('../img/ting4.jpg');
+    }
   }
   & > div:nth-of-type(2){
     grid-column: 5 / span 4;
@@ -509,6 +533,9 @@ main{
     grid-row: 17 /span 4;
     background-size: cover;
     background-position: center;
+    &:hover{
+      background-image: url('../img/ting7.jpg');
+    }
   }
   & > div:nth-of-type(2){
     background-color: #50E3C2;
