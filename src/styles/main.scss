@@ -148,7 +148,7 @@ main{
     grid-row: 4 /span 2;
     &:hover{
       background-image: url('../img/ting2.jpg');
-      background-position: top;
+      background-position: bottom;
     }
   }
   & > div:nth-of-type(2){
@@ -204,7 +204,7 @@ main{
     grid-row: 9 /span 2;
     &:hover{
       background-image: url('../img/ting3.jpg');
-      background-position: top;
+      background-position: center;
     }
   }
   & > div:nth-of-type(2){
@@ -325,7 +325,7 @@ main{
     grid-row: 13 /span 2;
     transform: scaleX(-1);
     &:hover{
-      background-image: url('../img/ting6.png');
+      background-image: url('../img/ting6.jpg');
       transform: scaleX(1);
       background-position: top;
     }
